@@ -136,8 +136,7 @@ const CONFIG = {
       to: '2014',
     },
   ],
-  publications: [],
-};
+  publications: [
     // {
     //   title: 'Publication Title',
     //   conferenceName: '',
