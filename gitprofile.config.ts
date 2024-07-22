@@ -130,8 +130,9 @@ const CONFIG = {
       to: '2019',
     },
     {
-      institution: 'Mechatronics Engineering, Electrical & Electronic University - Aleppo',
-      degree: ' ',
+      institution:
+        'Mechatronics Engineering, Electrical & Electronic University - Aleppo',
+      degree: '',
       from: '2010',
       to: '2014',
     },

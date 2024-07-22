@@ -106,7 +106,6 @@ const GitProfile = ({ config }: { config: Config }) => {
       );
       const data = response.data;
       data.company = 'TomTom International';
-      data.bio = `Software Engineer | Mobile Developer | Automation Enthusiast`;
 
       setProfile({
         avatar: data.avatar_url,
