@@ -96,9 +96,16 @@ const CONFIG = {
   experiences: [
     {
       company: 'TomTom International',
+      position: 'Software Engineer',
+      from: 'Oct 2024',
+      to: 'Present',
+      companyLink: 'https://tomtom.com',
+    },
+    {
+      company: 'TomTom International',
       position: 'Mobile Developer intern',
       from: 'March 2023',
-      to: 'Present',
+      to: 'Sep 2024',
       companyLink: 'https://tomtom.com',
     },
   ],
