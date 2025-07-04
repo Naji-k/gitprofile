@@ -103,7 +103,7 @@ const CONFIG = {
       company: 'TomTom International',
       position: 'Mobile Developer intern',
       from: 'March 2023',
-      to: 'Sep 2024',
+      to: 'Oct 2024',
       companyLink: 'https://tomtom.com',
     },
   ],
