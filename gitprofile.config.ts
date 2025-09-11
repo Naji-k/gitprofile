@@ -54,6 +54,7 @@ const CONFIG = {
   social: {
     linkedin: 'najikanounji',
     x: 'najikanounji',
+
     mastodon: '',
     researchGate: '',
     facebook: '',
