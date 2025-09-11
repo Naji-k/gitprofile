@@ -43,7 +43,8 @@ const CONFIG = {
             'Slack bot build with Python to collect user feedback and create Jira tickets using AI.',
           imageUrl:
             'https://github.com/Naji-k/Feedback-SlackBot/blob/c6190dd331a98ff9775d2e0ea34a5019871740f8/Assets/Logo.png?raw=true',
-          link: 'https://github.com/Naji-k/Feedback-SlackBot/tree/main',
+          link: '/detail/slack-bot',
+          openInNewTab: false,
         },
       ],
     },
