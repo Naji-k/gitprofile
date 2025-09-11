@@ -48,14 +48,13 @@ const CONFIG = {
       ],
     },
   },
-  seo: {
-    title: 'Portfolio of Naji',
-    description: '',
-    imageURL: '',
-  },
+
+  seo: { title: 'Portfolio of Naji', description: '', imageURL: '' },
+
   social: {
     linkedin: 'najikanounji',
-    twitter: 'najikanounji',
+    x: 'najikanounji',
+
     mastodon: '',
     researchGate: '',
     facebook: '',
@@ -69,7 +68,7 @@ const CONFIG = {
     medium: '',
     dev: '',
     stackoverflow: '', // example: '1/jeff-atwood'
-    skype: '',
+    discord: '',
     telegram: '',
     website: 'https://www.nkanounji.com',
     phone: '',
@@ -174,10 +173,7 @@ const CONFIG = {
     id: 'G-TJ60HVCJRF', // GA3 tracking id/GA4 tag id UA-XXXXXXXXX-X | G-XXXXXXXXXX
   },
   // Track visitor interaction and behavior. https://www.hotjar.com
-  hotjar: {
-    id: '',
-    snippetVersion: 6,
-  },
+  hotjar: { id: '', snippetVersion: 6 },
   themeConfig: {
     defaultTheme: 'winter',
 
@@ -225,19 +221,11 @@ const CONFIG = {
       'dim',
       'nord',
       'sunset',
+      'caramellatte',
+      'abyss',
+      'silk',
       'procyon',
     ],
-
-    // Custom theme, applied to `procyon` theme
-    customTheme: {
-      primary: '#fc055b',
-      secondary: '#219aaf',
-      accent: '#e8d03a',
-      neutral: '#2A2730',
-      'base-100': '#E3E3ED',
-      '--rounded-box': '3rem',
-      '--rounded-btn': '3rem',
-    },
   },
 
   // Optional Footer. Supports plain text or HTML.
