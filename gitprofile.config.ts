@@ -91,6 +91,7 @@ const CONFIG = {
     'PostgreSQL',
     'Git',
     'Rest API',
+    'tRPC',
   ],
   experiences: [
     {
@@ -102,7 +103,7 @@ const CONFIG = {
     },
     {
       company: 'TomTom International',
-      position: 'Mobile Developer intern',
+      position: 'Software Engineer intern',
       from: 'March 2023',
       to: 'Oct 2024',
       companyLink: 'https://tomtom.com',
