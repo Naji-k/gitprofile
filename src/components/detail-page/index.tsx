@@ -120,7 +120,7 @@ const DetailPage = ({ loading = false, title, markdownPath }: PageProps) => {
                     <ReactMarkdown
                       rehypePlugins={[rehypeRaw]}
                       components={{
-                        h1: ({ }) => (
+                        h1: ({}) => (
                           <h1 className="text-3xl font-bold text-base-content opacity-90 mb-6 mt-8">
                             <></>
                           </h1>
@@ -173,7 +173,7 @@ const DetailPage = ({ loading = false, title, markdownPath }: PageProps) => {
                         a: ({ href, children }) => (
                           <a
                             href={href}
-                            className="text-base-content opacity-70 hover:opacity-100 hover:underline"
+                            className="text-blue-600 opacity-70 hover:opacity-100 hover:underline "
                             target="_blank"
                             rel="noopener noreferrer"
                           >

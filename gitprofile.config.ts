@@ -42,17 +42,28 @@ const CONFIG = {
           title: 'Feedback Bot',
           description:
             'Slack bot build with Python to collect user feedback and create Jira tickets using AI.',
-          imageUrl:
-            'https://github.com/Naji-k/Feedback-SlackBot/blob/c6190dd331a98ff9775d2e0ea34a5019871740f8/Assets/Logo.png?raw=true',
-          link: '/detail/slack-bot',
+          imageUrl: '/content/Logo-2.png',
+          link: '/projects/slack-bot',
+          openInNewTab: false,
+        },
+        {
+          title: 'Learning to build with AI',
+          description:
+            'Small web games I built while exploring how to code with AI as a partner — applying SOLID principles, multi-language support, and keeping full control of the code.',
+          imageUrl: '/content/ai-logo.png',
+          link: '/projects/ai-projects',
           openInNewTab: false,
         },
       ],
     },
   },
 
-  seo: { title: 'Portfolio of Naji', description: '', imageURL: '' },
-
+  seo: {
+    title: 'Naji Kanounji - Software Engineer Portfolio',
+    description:
+      'Software Engineer based in Amsterdam. View my projects in Swift, Python, TypeScript. Experience at TomTom International. Available for hire.',
+    imageURL: '',
+  },
   social: {
     linkedin: 'najikanounji',
     x: 'najikanounji',
@@ -146,32 +157,9 @@ const CONFIG = {
       to: '2014',
     },
   ],
-  publications: [
-    // {
-    //   title: 'Publication Title',
-    //   conferenceName: '',
-    //   journalName: 'Journal Name',
-    //   authors: 'John Doe, Jane Smith',
-    //   link: 'https://example.com',
-    //   description:
-    //     'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-    // },
-    // {
-    //   title: 'Publication Title',
-    //   conferenceName: 'Conference Name',
-    //   journalName: '',
-    //   authors: 'John Doe, Jane Smith',
-    //   link: 'https://example.com',
-    //   description:
-    //     'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-    // },
-  ],
+  publications: [],
   // Display articles from your medium or dev account. (Optional)
-  blog: {
-    // source: 'dev', // medium | dev
-    // username: 'arifszn', // to hide blog section, keep it empty
-    // limit: 2, // How many articles to display. Max is 10.
-  },
+  blog: {},
   googleAnalytics: {
     id: 'G-TJ60HVCJRF', // GA3 tracking id/GA4 tag id UA-XXXXXXXXX-X | G-XXXXXXXXXX
   },
@@ -236,7 +224,7 @@ const CONFIG = {
       class="text-primary" href="https://github.com/arifszn/gitprofile"
       target="_blank"
       rel="noreferrer"
-    >GitProfile</a> and ❤️`,
+    >GitProfile</a>, extended by <a class="text-primary" href="https://github.com/naji-k" target="_blank" rel="noreferrer">Naji</a>`,
 
   enablePWA: true,
 };
