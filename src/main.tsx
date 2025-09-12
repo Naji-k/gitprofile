@@ -1,14 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import GitProfile from './components/gitprofile.tsx';
-import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
+import { HashRouter, Route, Routes, Navigate } from 'react-router-dom';
 import DetailPage from './components/detail-page/index.tsx';
 import { ThemeProvider } from './constants/ThemeContext.tsx';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <ThemeProvider>
-      <BrowserRouter>
+      <HashRouter>
         <Routes>
           <Route path="/" element={<GitProfile config={CONFIG} />} />
           <Route
@@ -29,7 +29,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
           <Route path="/projects" element={<Navigate to="/" replace />} />
           <Route path="/projects/" element={<Navigate to="/" replace />} />
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </ThemeProvider>
   </React.StrictMode>,
 );

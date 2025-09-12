@@ -43,7 +43,7 @@ const CONFIG = {
           description:
             'Slack bot build with Python to collect user feedback and create Jira tickets using AI.',
           imageUrl: '/content/Logo-2.png',
-          link: '/projects/slack-bot',
+          link: '#/projects/slack-bot',
           openInNewTab: false,
         },
         {
@@ -51,7 +51,7 @@ const CONFIG = {
           description:
             'Small web games I built while exploring how to code with AI as a partner — applying SOLID principles, multi-language support, and keeping full control of the code.',
           imageUrl: '/content/ai-logo.png',
-          link: '/projects/ai-projects',
+          link: '#/projects/ai-projects',
           openInNewTab: false,
         },
       ],
