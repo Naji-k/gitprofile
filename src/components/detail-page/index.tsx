@@ -1,7 +1,6 @@
-import { Fragment, useState, useEffect, Children } from 'react';
+import { Fragment, useState, useEffect } from 'react';
 import { skeleton } from '../../utils';
 import { useTheme } from '../../constants/ThemeContext';
-import { useParams } from 'react-router-dom';
 import rehypeRaw from 'rehype-raw';
 
 import ReactMarkdown from 'react-markdown';
@@ -9,25 +8,17 @@ import ReactMarkdown from 'react-markdown';
 interface PageProps {
   loading?: boolean;
   title?: string;
-  markdownPath?: string;
+  markdownPath: string;
 }
 
 const DetailPage = ({ loading = false, title, markdownPath }: PageProps) => {
   const BG_COLOR = 'bg-base-200';
   const { theme } = useTheme();
-  const { slug } = useParams<{ slug?: string }>();
 
   const [content, setContent] = useState<string>('');
   const [contentLoading, setContentLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
   const [pageTitle, setPageTitle] = useState<string>(title || 'Documentation');
-
-  // Determine which markdown file to load
-  const getMarkdownPath = () => {
-    if (markdownPath) return markdownPath;
-    if (slug) return `/content/${slug}.md`;
-    return '/content/default.md';
-  };
 
   // Load markdown content
   useEffect(() => {
@@ -42,11 +33,10 @@ const DetailPage = ({ loading = false, title, markdownPath }: PageProps) => {
     const loadMarkdown = async () => {
       try {
         setContentLoading(true);
-        const filePath = getMarkdownPath();
-        const response = await fetch(filePath);
+        const response = await fetch(markdownPath);
 
         if (!response.ok) {
-          throw new Error(`Failed to load content from ${filePath}`);
+          throw new Error(`Failed to load content from ${markdownPath}`);
         }
 
         const text = await response.text();
@@ -71,7 +61,7 @@ const DetailPage = ({ loading = false, title, markdownPath }: PageProps) => {
     };
 
     loadMarkdown();
-  }, [theme, title, markdownPath, slug]);
+  }, [theme, title, markdownPath]);
 
   // Wrap content in paragraphs
 
@@ -120,7 +110,7 @@ const DetailPage = ({ loading = false, title, markdownPath }: PageProps) => {
                     <ReactMarkdown
                       rehypePlugins={[rehypeRaw]}
                       components={{
-                        h1: ({}) => (
+                        h1: () => (
                           <h1 className="text-3xl font-bold text-base-content opacity-90 mb-6 mt-8">
                             <></>
                           </h1>
