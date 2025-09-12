@@ -2,7 +2,6 @@
   <img src="/content/Logo-2.png" alt="Logo" style="max-width: 100%; height: auto;" />
 </div>
 
-
 # Welcome to the Feedback Bot Project!
 
 I developed this during my internship at TomTom.
@@ -51,5 +50,4 @@ This project was an invaluable learning experience. It covered a range of techni
   - Databases and migrations (PostgreSQL, Flyway).
   - Jira API and Grafana Integration.
 
-This project improved my technical capabilities and reinforced the importance of clear communication, thorough documentation, and user-focused design in software development. 
-
+This project improved my technical capabilities and reinforced the importance of clear communication, thorough documentation, and user-focused design in software development.
