@@ -263,6 +263,7 @@ const GitProfile = ({ config }: { config: Config }) => {
                         sanitizedConfig.projects.external.projects
                       }
                       googleAnalyticId={sanitizedConfig.googleAnalytics.id}
+                      openInNewTab={false}
                     />
                   )}
                   {sanitizedConfig.blog.display && (
@@ -280,7 +281,7 @@ const GitProfile = ({ config }: { config: Config }) => {
             <footer
               className={`p-4 footer ${BG_COLOR} text-base-content footer-center`}
             >
-              <div className="card card-sm bg-base-100 shadow-sm">
+              <div className="card compact bg-base-100 shadow">
                 <Footer content={sanitizedConfig.footer} loading={loading} />
               </div>
             </footer>

@@ -9,11 +9,13 @@ const ExternalProjectCard = ({
   header,
   loading,
   googleAnalyticId,
+  openInNewTab = true,
 }: {
   externalProjects: SanitizedExternalProject[];
   header: string;
   loading: boolean;
   googleAnalyticId?: string;
+  openInNewTab?: boolean;
 }) => {
   const renderSkeleton = () => {
     const array = [];
@@ -85,8 +87,11 @@ const ExternalProjectCard = ({
           } catch (error) {
             console.error(error);
           }
-
-          window?.open(item.link, '_blank');
+          if (openInNewTab) {
+            window?.open(item.link, '_blank');
+          } else {
+            window.location.href = item.link;
+          }
         }}
       >
         <div className="p-8 h-full w-full">
