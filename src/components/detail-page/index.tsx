@@ -1,6 +1,5 @@
 import { Fragment, useState, useEffect } from 'react';
 import { skeleton } from '../../utils';
-import { useTheme } from '../../constants/ThemeContext';
 import rehypeRaw from 'rehype-raw';
 
 import ReactMarkdown from 'react-markdown';
@@ -13,7 +12,6 @@ interface PageProps {
 
 const DetailPage = ({ loading = false, title, markdownPath }: PageProps) => {
   const BG_COLOR = 'bg-base-200';
-  const { theme } = useTheme();
 
   const [content, setContent] = useState<string>('');
   const [contentLoading, setContentLoading] = useState<boolean>(true);
@@ -22,9 +20,9 @@ const DetailPage = ({ loading = false, title, markdownPath }: PageProps) => {
 
   // Load markdown content
   useEffect(() => {
-    console.log('DetailPage - Current theme:', theme);
+    // console.log('DetailPage - Current theme:', theme);
 
-    document.documentElement.setAttribute('data-theme', theme);
+    // document.documentElement.setAttribute('data-theme', theme);
     console.log(
       'DetailPage - HTML data-theme is now:',
       document.documentElement.getAttribute('data-theme'),
@@ -61,7 +59,7 @@ const DetailPage = ({ loading = false, title, markdownPath }: PageProps) => {
     };
 
     loadMarkdown();
-  }, [theme, title, markdownPath]);
+  }, [title, markdownPath]);
 
   // Wrap content in paragraphs
 

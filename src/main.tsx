@@ -11,7 +11,6 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<GitProfile config={CONFIG} />} />
-          <Route path="/docs" element={<DetailPage title="Documentation" />} />
           <Route
             path="/projects/slack-bot"
             element={
