@@ -19,7 +19,7 @@ const CONFIG = {
         sortBy: 'updated', // Sort projects by 'stars' or 'updated'
         limit: 4, // How many projects to display.
         exclude: {
-          forks: false, // Forked projects will not be displayed if set to true.
+          forks: true, // Forked projects will not be displayed if set to true.
           projects: ['naji-k/gitprofile'], // These projects will not be displayed. example: ['arifszn/my-project1', 'arifszn/my-project2']
         },
       },
@@ -30,6 +30,7 @@ const CONFIG = {
           'Naji-k/MyFlix',
           'Naji-k/Philosophers',
           'Naji-k/Cub3d',
+          'julicaro31/Webserv',
         ], // List of repository names to display. example: ['arifszn/my-project1', 'arifszn/my-project2']
       },
     },
@@ -129,7 +130,7 @@ const CONFIG = {
       institution: 'CODAM Coding School',
       degree: 'Software Engineering',
       from: '2022',
-      to: 'present',
+      to: '2025',
     },
     {
       institution: 'Notre Dame University - Louaize',

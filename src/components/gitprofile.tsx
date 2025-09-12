@@ -179,7 +179,6 @@ const GitProfile = ({ config }: { config: Config }) => {
   };
 
   return (
-    <HelmetProvider>
       <div className="fade-in h-screen">
         {error ? (
           <ErrorPage
@@ -189,10 +188,6 @@ const GitProfile = ({ config }: { config: Config }) => {
           />
         ) : (
           <>
-            <HeadTagEditor
-              googleAnalyticsId={sanitizedConfig.googleAnalytics.id}
-              appliedTheme={theme}
-            />
             <div className={`p-4 lg:p-10 min-h-full ${BG_COLOR}`}>
               <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 rounded-box">
                 <div className="col-span-1">
@@ -251,7 +246,6 @@ const GitProfile = ({ config }: { config: Config }) => {
                         limit={sanitizedConfig.projects.github.automatic.limit}
                         githubProjects={githubProjects}
                         loading={loading}
-                        username={sanitizedConfig.github.username}
                         googleAnalyticsId={sanitizedConfig.googleAnalytics.id}
                       />
                     )}
@@ -296,7 +290,6 @@ const GitProfile = ({ config }: { config: Config }) => {
           </>
         )}
       </div>
-    </HelmetProvider>
   );
 };
 
