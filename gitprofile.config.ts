@@ -66,7 +66,7 @@ const CONFIG = {
   },
   social: {
     linkedin: 'najikanounji',
-    x: 'najikanounji',
+    x: '',
 
     mastodon: '',
     researchGate: '',
@@ -97,21 +97,25 @@ const CONFIG = {
     'Python',
     'TypeScript',
     'React Native',
-    'Android',
-    'iOS',
-    'Docker',
+    'Android Kotlin',
+    'iOS UIKit',
+    'MVC',
+    'MVVM',
+    'Docker-Compose',
     'Bash',
     'PostgreSQL',
+    'GitHub Actions',
     'Git',
     'Rest API',
     'tRPC',
+    'Flask',
   ],
   experiences: [
     {
       company: 'TomTom International',
       position: 'Software Engineer',
       from: 'Oct 2024',
-      to: 'Present',
+      to: 'Sep 2025',
       companyLink: 'https://tomtom.com',
     },
     {
