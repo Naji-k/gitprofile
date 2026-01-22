@@ -26,10 +26,9 @@ const CONFIG = {
       manual: {
         // Properties for manually specifying projects
         projects: [
+          'Naji-k/ft_transcendence-pong',
           'naji-k/ADStore',
           'Naji-k/MyFlix',
-          'Naji-k/Philosophers',
-          'Naji-k/Cub3d',
           'julicaro31/Webserv',
         ], // List of repository names to display. example: ['arifszn/my-project1', 'arifszn/my-project2']
       },
