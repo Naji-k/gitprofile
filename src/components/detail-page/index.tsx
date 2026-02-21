@@ -9,7 +9,33 @@ interface PageProps {
   title?: string;
   markdownPath: string;
 }
+const convertToRawUrl = (url: string): string => {
+  // Already a raw URL
+  if (url.startsWith('https://raw.githubusercontent.com/')) {
+    return url;
+  }
 
+  // Convert github.com/user/repo/blob/branch/path to raw URL
+  const blobMatch = url.match(
+    /^https:\/\/github\.com\/([^/]+)\/([^/]+)\/blob\/(.+)$/,
+  );
+  if (blobMatch) {
+    const [, owner, repo, pathWithBranch] = blobMatch;
+    return `https://raw.githubusercontent.com/${owner}/${repo}/${pathWithBranch}`;
+  }
+
+  // Convert github.com/user/repo/raw/branch/path to raw URL
+  const rawMatch = url.match(
+    /^https:\/\/github\.com\/([^/]+)\/([^/]+)\/raw\/(.+)$/,
+  );
+  if (rawMatch) {
+    const [, owner, repo, pathWithBranch] = rawMatch;
+    return `https://raw.githubusercontent.com/${owner}/${repo}/${pathWithBranch}`;
+  }
+
+  // Return as-is if not a GitHub URL (local path or other URL)
+  return url;
+};
 const DetailPage = ({ loading = false, title, markdownPath }: PageProps) => {
   const BG_COLOR = 'bg-base-200';
 
@@ -31,7 +57,9 @@ const DetailPage = ({ loading = false, title, markdownPath }: PageProps) => {
     const loadMarkdown = async () => {
       try {
         setContentLoading(true);
-        const response = await fetch(markdownPath);
+        const fetchUrl = convertToRawUrl(markdownPath);
+
+        const response = await fetch(fetchUrl);
 
         if (!response.ok) {
           throw new Error(`Failed to load content from ${markdownPath}`);
