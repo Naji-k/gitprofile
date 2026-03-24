@@ -98,26 +98,38 @@ const GitProfile = ({ config }: { config: Config }) => {
   const loadData = useCallback(async () => {
     try {
       setLoading(true);
-
+      const cashed = sessionStorage.getItem('gitprofile_cache');
+      if (cashed) {
+        const { profile, githubProjects } = JSON.parse(cashed);
+        setProfile(profile);
+        setGithubProjects(githubProjects);
+        return;
+      }
       const response = await axios.get(
         `https://api.github.com/users/${sanitizedConfig.github.username}`,
       );
       const data = response.data;
-      data.company = 'TomTom International';
+      // data.company = 'TomTom International';
 
-      setProfile({
+      const profileData = {
         avatar: data.avatar_url,
         name: data.name || ' ',
         bio: data.bio || '',
         location: data.location || '',
         company: data.company || '',
-      });
+      };
+      setProfile(profileData);
 
       if (!sanitizedConfig.projects.github.display) {
         return;
       }
+      const projects = await getGithubProjects(data.public_repos);
+      sessionStorage.setItem(
+        'gitprofile_cache',
+        JSON.stringify({ profile: profileData, githubProjects: projects }),
+      );
 
-      setGithubProjects(await getGithubProjects(data.public_repos));
+      setGithubProjects(projects);
     } catch (error) {
       handleError(error as AxiosError | Error);
     } finally {
