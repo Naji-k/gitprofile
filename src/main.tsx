@@ -1,59 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import GitProfile from './components/gitprofile.tsx';
-import {
-  HashRouter,
-  Route,
-  Routes,
-  Navigate,
-  useParams,
-} from 'react-router-dom';
+import { HashRouter, Route, Routes, Navigate } from 'react-router-dom';
 import DetailPage from './components/detail-page/index.tsx';
 import { ThemeProvider } from './constants/ThemeContext.tsx';
 
-const PROJECT_MARKDOWN_MAP: Record<
-  string,
-  { title?: string; markdownPath: string; url?: string }
-> = {
-  ADStore: {
-    title: 'ADStore',
-    markdownPath: 'https://github.com/Naji-k/ADStore/blob/master/Readme.md',
-    url: 'https://github.com/Naji-k/ADStore',
-  },
-  MyFlix: {
-    title: 'MyFlix',
-    markdownPath: 'https://github.com/Naji-k/MyFlix/blob/main/README.md',
-    url: 'https://github.com/Naji-k/MyFlix',
-  },
-  'ft_transcendence-pong': {
-    title: 'ft_transcendence-pong',
-    markdownPath:
-      'https://github.com/Naji-k/ft_transcendence-pong/blob/main/Readme.md',
-    url: 'https://github.com/Naji-k/ft_transcendence-pong',
-  },
-  Webserv: {
-    title: 'Webserv',
-    markdownPath: 'https://github.com/julicaro31/Webserv/blob/main/Readme.md',
-    url: 'https://github.com/julicaro31/Webserv',
-  },
-};
-
-function ProjectDetailRoute() {
-  const { projectName } = useParams<{ projectName: string }>();
-  const project = projectName ? PROJECT_MARKDOWN_MAP[projectName] : undefined;
-
-  if (!project) {
-    return <Navigate to="/" replace />;
-  }
-
-  return (
-    <DetailPage
-      title={project.title}
-      markdownPath={project.markdownPath}
-      url={project.url}
-    />
-  );
-}
+import { ProjectDetailRoute } from './components/repo-detail-route/index.tsx';
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <ThemeProvider>
