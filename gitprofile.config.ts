@@ -60,7 +60,7 @@ const CONFIG = {
   seo: {
     title: 'Naji Kanounji - Software Engineer Portfolio',
     description:
-      'Software Engineer based in Amsterdam. View my projects in Swift, Python, TypeScript. Experience at TomTom International. Available for hire.',
+      'Software Engineer based in Amsterdam. View my projects in Swift, Python and TypeScript. Experience at TomTom International. Available for hire.',
     imageURL: '',
   },
   social: {
@@ -108,6 +108,8 @@ const CONFIG = {
     'Rest API',
     'tRPC',
     'Flask',
+    'aws',
+    'GCP',
   ],
   experiences: [
     {

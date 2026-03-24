@@ -3,6 +3,7 @@ import { AiOutlineFork, AiOutlineStar, AiOutlineGithub } from 'react-icons/ai';
 import { MdInsertLink } from 'react-icons/md';
 import { ga, getLanguageColor, skeleton } from '../../utils';
 import { GithubProject } from '../../interfaces/github-project';
+import { useNavigate } from 'react-router-dom';
 
 const GithubProjectCard = ({
   header,
@@ -17,6 +18,7 @@ const GithubProjectCard = ({
   limit: number;
   googleAnalyticsId?: string;
 }) => {
+  const navigate = useNavigate();
   if (!loading && githubProjects.length === 0) {
     return;
   }
@@ -88,7 +90,9 @@ const GithubProjectCard = ({
             console.error(error);
           }
 
-          window?.open(item.html_url, '_blank');
+          // window?.open(item.html_url, '_blank');
+          console.log(`Navigating to project: ${item.name}`);
+          navigate(`/projects/${item.name}`);
         }}
       >
         <div className="flex justify-between flex-col p-8 h-full w-full">

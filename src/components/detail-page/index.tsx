@@ -8,6 +8,7 @@ interface PageProps {
   loading?: boolean;
   title?: string;
   markdownPath: string;
+  url?: string;
 }
 const convertToRawUrl = (url: string): string => {
   // Already a raw URL
@@ -36,9 +37,13 @@ const convertToRawUrl = (url: string): string => {
   // Return as-is if not a GitHub URL (local path or other URL)
   return url;
 };
-const DetailPage = ({ loading = false, title, markdownPath }: PageProps) => {
+const DetailPage = ({
+  loading = false,
+  title,
+  markdownPath,
+  url,
+}: PageProps) => {
   const BG_COLOR = 'bg-base-200';
-
   const [content, setContent] = useState<string>('');
   const [contentLoading, setContentLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
@@ -47,7 +52,7 @@ const DetailPage = ({ loading = false, title, markdownPath }: PageProps) => {
   // Load markdown content
   useEffect(() => {
     // console.log('DetailPage - Current theme:', theme);
-
+    console.log('DetailPage - Resolved markdown path:', markdownPath);
     // document.documentElement.setAttribute('data-theme', theme);
     console.log(
       'DetailPage - HTML data-theme is now:',
@@ -208,7 +213,7 @@ const DetailPage = ({ loading = false, title, markdownPath }: PageProps) => {
                         ),
                         img: ({ src, alt }) => (
                           <img
-                            src={src}
+                            src={src ? convertToRawUrl(src) : ''}
                             alt={alt}
                             className="mx-auto block max-w-full h-auto"
                           />
@@ -233,6 +238,14 @@ const DetailPage = ({ loading = false, title, markdownPath }: PageProps) => {
                   >
                     ← Back
                   </button>
+                  {url && (
+                    <button
+                      onClick={() => window.open(url, '_blank')}
+                      className="btn btn-ghost text-base-content opacity-70 hover:opacity-100 ml-4"
+                    >
+                      ↗ Open in GitHub
+                    </button>
+                  )}
                 </div>
               )}
             </div>
