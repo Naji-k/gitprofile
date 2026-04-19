@@ -38,6 +38,14 @@ const CONFIG = {
       // // To hide the `External Projects` section, keep it empty.
       projects: [
         {
+          title: 'Match Before Apply',
+          description:
+            'A web app that helps job seekers find their best job matches before applying, using AI Agents to analyze their skills and preferences against job requirements.',
+          imageUrl: '/content/MBA-Circle.png',
+          link: '#/projects/match-before-apply',
+          openInNewTab: false,
+        },
+        {
           title: 'Feedback Bot',
           description:
             'Slack bot build with Python to collect user feedback and create Jira tickets using AI.',
@@ -108,7 +116,8 @@ const CONFIG = {
     'Rest API',
     'tRPC',
     'Flask',
-    'aws',
+    'FastAPI',
+    'AWS',
     'GCP',
   ],
   experiences: [

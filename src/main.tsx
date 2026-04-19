@@ -28,6 +28,15 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
             }
           />
           <Route
+            path="/projects/match-before-apply"
+            element={
+              <DetailPage
+                title="Match Before Apply"
+                markdownPath="/content/matchBeforeApply.md"
+              />
+            }
+          />
+          <Route
             path="/projects/:projectName"
             element={<ProjectDetailRoute />}
           />
