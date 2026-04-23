@@ -55,8 +55,14 @@ I built a tool to **evaluate them first — and track them properly after.**
 ## Screenshots
 
 <div>
-    <img src="/content/results.png"  width=70% height=70%>
-    <img src="/content/kanban-board.png"  width=70% height=70%>
+    <div style="text-align: center; margin: 24px 0;font-weight: bold;">
+      <p style="margin: 12px 0;">Multi-Agent Pipeline Architecture</p>
+      <img src="/content/Diagram.jpg" alt="Multi-Agent Pipeline Architecture" style="width: 70%; height: auto; margin: 8px 0 24px;" />
+      <p style="margin: 12px 0;">Match Score &amp; Gap Analysis</p>
+      <img src="/content/results.png" alt="Match Score and Gap Analysis" style="width: 70%; height: auto; margin: 8px 0 24px;" />
+      <p style="margin: 12px 0;">Application Tracker (Kanban Board)</p>
+      <img src="/content/kanban-board.png" alt="Application Tracker Kanban Board" style="width: 70%; height: auto; margin: 8px 0 24px;" />
+    </div>
 </div>
 
 ## Links
